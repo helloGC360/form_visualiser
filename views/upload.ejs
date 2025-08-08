@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #89f7fe, #66a6ff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+text-align:center;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+            animation: popUp 0.8s ease-in-out;
+        }
+
+        input[type="file"],
+        input[type="text"],
+        input[type="submit"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            outline: none;
+            border-radius: 8px;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            background: #f0f0f0;
+        }
+
+        input[type="submit"] {
+            background: #66a6ff;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #4e8fff;
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes popUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+<p>Visualise your html form with helloGc!!<p>
+
+   <p>your input field must have name Attributes<p>
+<br>
+<p>example:-   name=&#34name&#34</p>   
+    <h1>Hello GC 👋</h1>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        Upload your HTML file:<br>
+        <input type="file" name="file" accept=".html">
+        Enter your Actions of your form:<br>
+        <input type="text" name="rout" placeholder="if action=&#34/submit&#34 then enter submit only">
+        <input type="submit" value="Submit">
+    </form>
+<p>this tool is made by helloGC, since it is in initial stage, so there may some err or bugs in it. </p><br>
+<p>if sometimes not working try with by renaming your file.</p>
+<p>Thank You!!!</p>
+
+</body>
+</html>
