@@ -4,98 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Form</title>
+    <title>HelloGC Form Visualizer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(120deg, #89f7fe, #66a6ff);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
             margin: 0;
-            animation: fadeIn 2s ease-in-out;
-text-align:center;
+            padding: 0;
+            color: #333;
         }
-
-        h1 {
-            color: white;
-            font-size: 2.5rem;
-            animation: slideDown 1s ease-in-out;
-        }
-
-        form {
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
             background: white;
-            padding: 20px;
             border-radius: 15px;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-            animation: popUp 0.8s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            padding: 25px;
+            text-align: center;
         }
-
-        input[type="file"],
-        input[type="text"],
-        input[type="submit"] {
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            outline: none;
-            border-radius: 8px;
-            width: 100%;
-            transition: transform 0.2s;
+        h1 {
+            color: #4a90e2;
+            margin-bottom: 10px;
         }
-
+        p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
         input[type="file"],
         input[type="text"] {
-            background: #f0f0f0;
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            outline: none;
+            transition: 0.3s;
         }
-
+        input[type="file"]:focus,
+        input[type="text"]:focus {
+            border-color: #2c71b8;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        }
         input[type="submit"] {
-            background: #66a6ff;
+            padding: 10px 20px;
+            border: none;
+            background: #4a90e2;
             color: white;
+            font-size: 16px;
+            border-radius: 8px;
             cursor: pointer;
+            transition: background 0.3s;
         }
-
         input[type="submit"]:hover {
-            background: #4e8fff;
-            transform: scale(1.05);
+            background: #2c71b8;
         }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes popUp {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        .footer-note {
+            font-size: 12px;
+            color: #555;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
-<p>Visualise your html form with helloGc!!<p>
+    <div class="container">
+        <p>Visualise your HTML form with HelloGC!!</p>
+        <p>Your input field must have <b>name</b> attributes.</p>
+        <p>Example: <code>name="name"</code></p>
 
-   <p>your input field must have name Attributes<p>
-<br>
-<p>example:-   name=&#34name&#34</p>   
-    <h1>Hello GC 👋</h1>
+        <h1>Hello GC 👋</h1>
 
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        Upload your HTML file:<br>
-        <input type="file" name="file" accept=".html">
-        Enter your Actions of your form:<br>
-        <input type="text" name="rout" placeholder="if action=&#34/submit&#34 then enter submit only">
-        <input type="submit" value="Submit">
-    </form>
-<p>this tool is made by helloGC, since it is in initial stage, so there may some err or bugs in it. </p><br>
-<p>if sometimes not working try with by renaming your file.</p>
-<p>Thank You!!!</p>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label>Upload your HTML file:</label><br>
+            <input type="file" name="file" accept=".html">
 
+            <label>Enter the action of your form:</label><br>
+            <input type="text" name="rout" placeholder='If action="/submit" then enter /submit'>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <p class="footer-note">
+            This tool is made by HelloGC. Since it is in the initial stage, there may be some issues.  
+            If it doesn’t work, try renaming your file.  
+            Thank You!!!
+        </p>
+    </div>
 </body>
 </html>
